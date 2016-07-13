@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+}
+
+
+/*//////   HEADER   //////*/
+
+header {
+  background-color: orange;
+  height: 5em;
+}
+
+.header-left {
+  text-align: center;
+  font-size: 3em;
+}
+
+
+/*//////  INFO //////*/
+
+.info {
+  
+}
+
+.info_text {
+  
+}
+
+
+/*///////  HERO  //////*/
+
+
+.hero {
+  margin-top: 10em;
+}
+
+.hero_text {
+  text-align: center;
+  font-size: 2em;
+}
+
+.hero_box {
+  
+}
+
+.hero_form {
+  
+}
+
+.hero_advanced {
+  text-align: center;
+  color: blue;
+}
+
+
+
+/*///////   RESULTS   //////*/
+
+.results {
+
+}
+
+.results_table {
+
+}
+
+
+
+
+
+/*////// SEARCH //////*/
+
+.search {
+  
+}
+
+
+.donor {
+  
+}
+
+.donor_headline {
+  text-align: center;
+  color: white;
+  background-color: blue;
+}
+
+.question_box {
+  margin: 1em;
+}
+
+.all_donors_data_city {
+  
+}
+
+.all_donors_data_state {
+  
+}
+
+.all_donors_submit {
+  
+}
+
+
+.all_donors_submit {
+  text-align: center;
+  padding: 2em;
+  clear: both;
+}
+
+
+.donor {
+  
+}
+
+#presidential_data {
+  
+}
+
+#presidential_data_city {
+  
+}
+
+#presidential_data_state {
+  
+}
+
+#campaign_id {
+  border: 1px red solid; 
+}
+
+.presidential_submit {
+  
+}
+
+
+.presidential_submit {
+  text-align: center;
+  text-align: center;
+  padding: 2em;
+  clear: both;
+}
+
+
+.presidential_donor_info {
+  background-color: #9E9EA4;
+  margin: 0.5em auto;
+}
+
+
+
+
+
+
+
+
+/*////// RESULTS //////*/
+
+
+.all_donor_results {
+  
+}
+
+.presidential_results {
+  
+}
+
+
+.results_headline {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+
+.all_donor_info_template {
+  display: none;
+}
+
+.all_donor_info{
+  background-color: #9E9EA4;
+  margin: 0.5em auto;
+  padding: 1em;
+}
+
+.lighter {
+  background-color: #E0E0E0;
+}
+
+.name {
+  font-weight: bold;
+  padding-top: 0.3em;
+}
+
+.committee {
+  font-weight: bold;
+  padding-top: 0.3em;
+}
+
+.amount {
+  font-weight: bold;
+  padding-top: 0.3em;
+
+}
+
+.date {
+  padding-top: 0.3em;
+  font-weight: bold;
+}
+
+
+.contributor_name {
+  padding-left: 1.5em;
+  font-weight: normal;
+}
+
+.committee_name {
+  padding-left: 1.5em;
+  font-weight: normal;
+}
+
+.contribution_amount {
+  padding-left: 1.5em;
+  font-weight: normal;
+}
+
+.contribution_date {
+  padding-left: 1.5em;
+  font-weight: normal;
+}
+
+
+
+
+
+
+
+.hero_input_templates {
+  display: none;
+}
+
+.results_templates {
+  display: none;  
+}
+
+
+table {
+  table-layout: fixed;
+}
