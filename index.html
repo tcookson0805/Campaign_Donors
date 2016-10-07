@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,600,800" rel="stylesheet">
     <link rel='stylesheet' type:'text/css' href='css/main.css'>
 
   </head>
@@ -14,57 +15,66 @@
     <div class='container'>
     
       <header class='row'>
-        <div class="col s4">
-          <div class='header-left'>Donor Data Logo</div>
+        <div class="col s12">
+          <div class='center-align headline'>Campaign Donor Information</div>
         </div>
       </header>
       
-      
-      <section class='row hero'>
+<!--       <section class='row'>
         <div class='col s6 offset-s3'>
-          <div class='hero_text'>Show me donor information by... </div>
-          <div class='hero_box'>
-            <form class='hero_form'>
-              <div class="input-field col s12">
-                <select class='hero_select'>
-                  <option value="" disabled selected>Choose your option</option>
-                  <option value="name">Name</option>
-                  <option value="city">City</option>
-                  <option value="state">State</option>
-                  <option value="employer">Employer</option>
-                  <option value="campaign">Presidential Campaign</option>
-                </select>
-              </div>
-            </form>
+          <div class='info'>
+            Welcome to Donation Disclosure, a tool that allows you to explore how campaigns and committees fund their missions.
           </div>
-          
-          <div class='row hero_input'>
+        </div>
+      </section> -->
+      
+      <section class='row'>
+      <div class='col s8 offset-s2'>
+      <div class='row card-panel search'>
+        <div> 
+          <div class='col s10 offset-s1'>
+            <div class='search_text'>Show me donor information by... </div>
+            <div class='search_box'>
+              <form class='search_form'>
+                <div class="input-field col s8 offset-s2">
+                  <select class='search_select'>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="name">Name</option>
+                    <option value="city">City</option>
+                    <option value="state">State</option>
+<!--                     <option value="employer">Employer</option>
+ --><!--                     <option value="campaign">Presidential Campaign</option> -->
+                  </select>
+                </div>
+              </form>
+            </div>
+            <div class='row search_input'></div>
+            <div class='search_advanced'>Advanced Search</div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </section>
+      
+      <section class='row card-panel results'>
 
-  
-                       
-          </div>
-          <div class='hero_advanced'>Advanced Search</div>
+      </section>
+      
+      <section class='row search_again'>
+        <div class='col s12 center-align'>
+          <a class="waves-effect waves-light btn">New Search</a>
         </div>
       </section>
       
-      <section class='row results'>
-
-      </section>
-      
-        
-
-    
-<!--       <div id='map_section'>
-        <div id="map"></div>
-      </div> -->    
+       
     
     </div>
     
     <!-- Templates -->
 
-    <div class='hero_input_templates'>
+    <div class='search_input_templates'>
       
-      <form class='col s12 hero_input_name'>
+      <form class='col s12 search_input_name'>
         <div class='row'>
           <div class="input-field col s6">
             <input id="first_name" type="text" class="validate">
@@ -76,13 +86,13 @@
           </div>
         </div>
         <div class='row'>
-          <div class='input-field col s6'>
+          <div class='input-field col s12 center-align'>
             <button class="btn waves-effect waves-light submit" type="submit" name="action">Submit</button>
           </div>
         </div>
       </form>
               
-      <form class='col s12 hero_input_city'>
+      <form class='col s12 search_input_city'>
         <div class='row'>
           <div class="input-field col s6">
             <input id="city" type="text" class="validate">
@@ -145,16 +155,18 @@
           </div>
         </div>
         <div class='row'>
-          <div class='input-field col s6'>
+          <div class='input-field col s12 center-align'>
             <button class="btn waves-effect waves-light submit" type="submit" name="action">Submit</button>
           </div>
         </div>
       </form>
+      
+      
               
-      <form class='col s12 hero_input_state'>
+      <form class='col s12 search_input_state'>
         <div class='row'>
           <div class="input-field col s6 offset-s3">
-            <select>
+            <select id="state">
               <option value="" disabled selected>State</option>
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
@@ -210,13 +222,13 @@
           </div>
         </div>
         <div class='row'>
-          <div class='input-field col s6'>
+          <div class='input-field col s12 center-align'>
             <button class="btn waves-effect waves-light submit" type="submit" name="action">Submit</button>
           </div>
         </div>
       </form>
 
-      <form class='col s12 hero_input_employer'>
+      <form class='col s12 search_input_employer'>
         <div class='row'>
           <div class="input-field col s6 offset-s3">
             <input id="employer" type="text" class="validate">
@@ -224,13 +236,13 @@
           </div>
         </div>
         <div class='row'>
-          <div class='input-field col s6'>
+          <div class='input-field col s12 center-align'>
             <button class="btn waves-effect waves-light submit" type="submit" name="action">Submit</button>
           </div>
         </div>
       </form>
       
-      <form class='col s12 hero_input_campaign'>
+      <form class='col s12 search_input_campaign'>
         <div class='row'>
           <div class="input-field col s6 offset-s3">
             <select id='campaign'>
@@ -253,14 +265,14 @@
           </div>
         </div>
         <div class='row'>
-          <div class='input-field col s6'>
+          <div class='input-field col s12 center-align'>
             <button class="btn waves-effect waves-light submit" type="submit" name="action">Submit</button>
           </div>
         </div>
       </form>
       
       
-      <form class='col s12 hero_input_advanced'>
+      <form class='col s12 search_input_advanced'>
         <div class='row'>
           <div class="input-field col s6">
             <input id="first_name" type="text" class="validate">
@@ -373,7 +385,7 @@
           </div>
         </div>
         <div class='row'>
-          <div class='input-field col s6'>
+          <div class='input-field col s12 center-align'>
             <button class="btn waves-effect waves-light submit" type="submit" name="action">Submit</button>
           </div>
         </div>
@@ -389,71 +401,104 @@
     
     <div class='results_templates'>
 
-      <div class='col s8 offset-s2 results_table_name '>
-        <table class='striped'>
+      <div class='col s12 no_result'>
+        <div class='center-align'>
+          <h3>No Results</h3>
+        </div>
+      </div>
+
+
+      <div class='col s12 results_table_name'>
+        <table>
           <thead>
             <tr>
                 <th data-field="name">Name</th>
                 <th data-field="city">City</th>
-                <th data-field="campaign">Campaign</th>
-                <th data-field="amount">Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class='result_name'></td>
-              <td class='result_city'></td>
-              <td class='result_campaign'></td>
-              <td class='result_amount'></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class='col s8 offset-s2 results_table_city '>
-        <table class='striped'>
-          <thead>
-            <tr>
-                <th data-field="city">City</th>
-                <th data-field="name">Name</th>
-                <th data-field="campaign">Campaign</th>
-                <th data-field="amount">Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class='result_city'></td>
-              <td class='result_name'></td>
-              <td class='result_campaign'></td>
-              <td class='result_amount'></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class='col s8 offset-s2 results_table_state '>
-        <table class='striped'>
-          <thead>
-            <tr>
                 <th data-field="state">State</th>
-                <th data-field="name">Name</th>
                 <th data-field="campaign">Campaign</th>
                 <th data-field="amount">Amount</th>
+                <th data-field="date">Date</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td class='result_state'></td>
-              <td class='result_name'></td>
-              <td class='result_campaign'></td>
-              <td class='amount'></td>
-            </tr>
-          </tbody>
         </table>
+        <div class='scrollable'>
+          <table class='striped'>
+            <tbody>
+              <tr>
+                <td class='result_name'></td>
+                <td class='result_city'></td>
+                <td class='result_state'></td>
+                <td class='result_campaign'></td>
+                <td class='result_amount'></td>
+                <td class='result_date'></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
-      <div class='col s8 offset-s2 results_table_employer '>
-        <table class='striped'>
+
+      
+      <div class='col s12 results_table_city '>
+        <table>
+          <thead>
+            <tr>
+                <th data-field="name">Name</th>
+                <th data-field="city">City</th>
+                <th data-field="state">State</th>
+                <th data-field="campaign">Campaign</th>
+                <th data-field="amount">Amount</th>
+                <th data-field="date">Date</th>
+            </tr>
+          </thead>
+        </table>
+        <div class='scrollable'>
+          <table class='striped'>
+            <tbody>
+              <tr>
+                <td class='result_name'></td>
+                <td class='result_city'></td>
+                <td class='result_state'></td>
+                <td class='result_campaign'></td>
+                <td class='result_amount'></td>
+                <td class='result_date'></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class='col s12 results_table_state '>
+        <table>
+          <thead>
+            <tr>
+                <th data-field="name">Name</th>
+                <th data-field="city">City</th>
+                <th data-field="state">State</th>
+                <th data-field="campaign">Campaign</th>
+                <th data-field="amount">Amount</th>
+                <th data-field="date">Date</th>
+            </tr>
+          </thead>
+        </table>
+        <div class='scrollable'>
+          <table class='striped'>
+            <tbody>
+              <tr>
+                <td class='result_name'></td>
+                <td class='result_city'></td>
+                <td class='result_state'></td>
+                <td class='result_campaign'></td>
+                <td class='result_amount'></td>
+                <td class='result_date'></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class='col s12 results_table_employer '>
+        <table>
           <thead>
             <tr>
                 <th data-field="employer">Employer</th>
@@ -462,19 +507,23 @@
                 <th data-field="amount">Amount</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td class='result_employer'></td>
-              <td class='result_name'></td>
-              <td class='result_campaign'></td>
-              <td class='result_amount'>/td>
-            </tr>
-          </tbody>
         </table>
+        <div class='scrollable'>
+          <table class='striped'>
+            <tbody>
+              <tr>
+                <td class='result_employer'></td>
+                <td class='result_name'></td>
+                <td class='result_campaign'></td>
+                <td class='result_amount'></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
         
-      <div class='col s8 offset-s2 results_table_presidential '>
-        <table class='striped'>
+      <div class='col s12 results_table_presidential '>
+        <table>
           <thead>
             <tr>
                 <th data-field="Campaign">Campaign</th>
@@ -483,89 +532,101 @@
                 <th data-field="price">Amount</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td class='result_campaign'></td>
-              <td class='result_name'></td>
-              <td class='result_city'></td>
-              <td class='result_amount'></td>
-            </tr>
-          </tbody>
         </table>
+        <div class='scrollable'>
+          <table class='striped'>
+            <tbody>
+              <tr>
+                <td class='result_campaign'></td>
+                <td class='result_name'></td>
+                <td class='result_city'></td>
+                <td class='result_amount'></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
         
 
-      <div class='col s8 offset-s2 results_table_senate '>
-        <table class='striped'>
+      <div class='col s12 results_table_senate '>
+        <table>
           <thead>
             <tr>
-                <th data-field="campaign">Campaign</th>
-                <th data-field="name">Name</th>
-                <th data-field="city">City</th>
-                <th data-field="amount">Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Roy Blunt</td>
-              <td>Ronnie Diebold</td>
-              <td>Oran, Mo</td>
-              <td>100.00</td>
-            </tr>
-            <tr>
-              <td>Roy Blunt</td>
-              <td>John GiGatti</td>
-              <td>Crap, Mo</td>
-              <td>10.00</td>
-            </tr>
-            <tr>
-              <td>Roy Blunt</td>
-              <td>Joe Bick</td>
-              <td>New York, NY</td>
-              <td>1000.00</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-        
-        
-      <div class='col s8 offset-s2 results_table_house '>
-        <table class='striped'>
-          <thead>
-            <tr>
-                <th data-field="campaign">Campaign</th>
+                <th data-field="Campaign">Campaign</th>
                 <th data-field="name">Name</th>
                 <th data-field="city">City</th>
                 <th data-field="price">Amount</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>Hillary Clinton</td>
-              <td>Ronnie Diebold</td>
-              <td>Oran, Mo</td>
-              <td>100.00</td>
-            </tr>
-            <tr>
-              <td>Donald Trump</td>
-              <td>John GiGatti</td>
-              <td>Crap, Mo</td>
-              <td>10.00</td>
-            </tr>
-            <tr>
-              <td>Bernie Sanders</td>
-              <td>Joe Bick</td>
-              <td>New York, NY</td>
-              <td>1000.00</td>
-            </tr>
-          </tbody>
         </table>
+        <div class='scrollable'>
+          <table class='striped'>
+            <tbody>
+              <tr>
+                <td>Roy Blunt</td>
+                <td>Ronnie Diebold</td>
+                <td>Oran, Mo</td>
+                <td>100.00</td>
+              </tr>
+              <tr>
+                <td>Roy Blunt</td>
+                <td>John GiGatti</td>
+                <td>Crap, Mo</td>
+                <td>10.00</td>
+              </tr>
+              <tr>
+                <td>Roy Blunt</td>
+                <td>Joe Bick</td>
+                <td>New York, NY</td>
+                <td>1000.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+        
+        
+      <div class='col s12 results_table_house '>
+        <table>
+          <thead>
+            <tr>
+                <th data-field="Campaign">Campaign</th>
+                <th data-field="name">Name</th>
+                <th data-field="city">City</th>
+                <th data-field="price">Amount</th>
+            </tr>
+          </thead>
+        </table>
+        <div class='scrollable'>
+          <table class='striped'>
+            <tbody>
+              <tr>
+                <td>Hillary Clinton</td>
+                <td>Ronnie Diebold</td>
+                <td>Oran, Mo</td>
+                <td>100.00</td>
+              </tr>
+              <tr>
+                <td>Donald Trump</td>
+                <td>John GiGatti</td>
+                <td>Crap, Mo</td>
+                <td>10.00</td>
+              </tr>
+              <tr>
+                <td>Bernie Sanders</td>
+                <td>Joe Bick</td>
+                <td>New York, NY</td>
+                <td>1000.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       
       
       <div class='col s12 results_table_advanced '>
-        <table class='striped'>
+        <table>
           <thead>
             <tr>
               <th data-field="name">Name</th>
@@ -578,19 +639,23 @@
               <th data-filed="date">Date</th> 
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td class='result_name'></td>
-              <td class='result_city'></td>
-              <td class='result_state'></td>
-              <td class='result_employer'></td>
-              <td class='result_occupation'></td>
-              <td class='result_campaign'></td>
-              <td class='result_amount'></td>
-              <td class='result_date'></td>
-            </tr>
-          </tbody>
         </table>
+        <div class='scrollable'>
+          <table class='striped'>
+            <tbody>
+              <tr>
+                <td class='result_name'></td>
+                <td class='result_city'></td>
+                <td class='result_state'></td>
+                <td class='result_employer'></td>
+                <td class='result_occupation'></td>
+                <td class='result_campaign'></td>
+                <td class='result_amount'></td>
+                <td class='result_date'></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         
         
         

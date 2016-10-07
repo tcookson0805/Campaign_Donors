@@ -2,15 +2,25 @@
   box-sizing: border-box;
 }
 
+body {
+  background: radial-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 1, 0.6) ),url('../images/money.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Cormorant Garamond', serif;
+}
+
 
 /*//////   HEADER   //////*/
 
 header {
-  background-color: orange;
+  background-color: #373737;
+  color: #C0B283;
   height: 5em;
+  font-size: 1.75em;
 }
 
-.header-left {
+.headline {
   text-align: center;
   font-size: 3em;
 }
@@ -27,52 +37,134 @@ header {
 }
 
 
+
 /*///////  HERO  //////*/
 
 
-.hero {
-  margin-top: 10em;
+section {
+  background: none;
 }
 
-.hero_text {
+
+.search, .results,  {
+  background-color: #F4F4F4;
+}
+
+.card-panel {
+
+}
+
+.search_text {
   text-align: center;
+  font-size: 2.75em;
+  margin: 0.5em auto 1em auto;
+}
+
+.search_box {
   font-size: 2em;
 }
 
-.hero_box {
+
+/* label color */
+.input-field label {
+  color: #000;
+  font-size: 1.5em;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: #000;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+/* valid color */
+.input-field input[type=text].valid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #000;
+}
+
+.search_form {
   
 }
 
-.hero_form {
-  
+ul.dropdown-content.select-dropdown li span {
+  color: black;
+  font-size: 0.75em;
 }
 
-.hero_advanced {
+.search_input ul.dropdown-content.select-dropdown li span {
+  font-size: 1.25em; 
+}
+
+
+.input_field {
   text-align: center;
-  color: blue;
 }
 
+.select-wrapper input.select-dropdown {
+  font-size: 1em;
+  text-align: center;
+}
+
+.search_input .select-wrapper input.select-dropdown {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.search_advanced {
+  text-align: center;
+  color: #C0B283;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+
+.btn {
+  background-color: #373737;
+}
+
+.btn:hover {
+  background-color: black;
+}
 
 
 /*///////   RESULTS   //////*/
 
 .results {
-
-}
-
-.results_table {
-
+  display: none;
 }
 
 
+.scrollable {
+  max-height: 45em;
+  overflow: scroll;
+}
 
+.no_result {
+  font-style: italic;
+}
+
+/*///////   SEARCH AGAIN   //////*/
+
+.search_again {
+  display: none;
+  background: none;
+}
 
 
 /*////// SEARCH //////*/
 
-.search {
-  
-}
 
 
 .donor {
@@ -146,7 +238,6 @@ header {
   background-color: #9E9EA4;
   margin: 0.5em auto;
 }
-
 
 
 
@@ -230,12 +321,7 @@ header {
 }
 
 
-
-
-
-
-
-.hero_input_templates {
+.search_input_templates {
   display: none;
 }
 
@@ -243,7 +329,19 @@ header {
   display: none;  
 }
 
+.search_again .btn {
+  background-color: #C0B283;
+  cursor: pointer;
+}
+
+
+
 
 table {
   table-layout: fixed;
+}
+
+thead tr th {
+  font-weight: 600;
+  font-size: 1.5em;
 }

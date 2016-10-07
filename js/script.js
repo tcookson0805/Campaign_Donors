@@ -4,8 +4,9 @@ $(document).ready(function(){
   
   $('select').material_select();
   
+  
   var searchVal;
-  var selection = $('.hero_select');
+  var selection = $('.search_select');
   var toggle = false;
   var searchVal;
   var firstName;
@@ -23,41 +24,65 @@ $(document).ready(function(){
   var maxDate;
   var minDate;
   
-  $('body').on('change', '.hero_select', function(){
 
+  $('body').on('change', '.search_select', function() {
+    
+    $('select').material_select('destroy');
+    $('.search_input').children().remove();
     var val = selection.children('option:selected').val();
     searchVal = selection.children('option:selected').val();
-    
-    if(!toggle){
-      $('select').material_select('destroy');
-      toggle = true
-      
-      var tempName = '.hero_input_' + val;
-      console.log(tempName);
-      var temp = $(tempName).clone();
-  
-      $('.hero_input').children().remove();
-      $('.hero_input').append(temp);
-      $('select').material_select();
-    }else{
-      toggle = false
-    }    
-     
+    var tempName = '.search_input_' + val;
+    var temp = $(tempName).clone();
+    $('.search_input').append(temp);
+    $('select').material_select();
+
   })
   
-  $('body').on('click', '.hero_advanced', function(){
+  // $('body').on('change', '.search_select', function(){
+
+  //   var val = selection.children('option:selected').val();
+  //   searchVal = selection.children('option:selected').val();
+    
+  //   if(!toggle){
+  //     $('select').material_select('destroy');
+  //     toggle = true
+      
+  //     var tempName = '.search_input_' + val;
+  //     console.log(tempName);
+  //     var temp = $(tempName).clone();
+  
+  //     $('.search_input').children().remove();
+  //     $('.search_input').append(temp);
+  //     $('select').material_select();
+  //   }else{
+
+  //     toggle = false
+  //   }    
+     
+  // })
+  
+
+  
+  $('body').on('click', '.search_advanced', function(){
+    
     $('select').material_select('destroy');
     searchVal = 'advanced';
-    var clone = $('.hero_input_advanced').clone();
+    var clone = $('.search_input_advanced').clone();
     
-    $('.hero_input').children().remove();
-    $('.hero_input').append(clone);
+    $('.search_input').children().remove();
+    $('.search_input').append(clone);
     $('select').material_select();
     
-  })
+  });
   
   $('body').on('click', '.submit', function(e){
     e.preventDefault();
+    
+    $(this).parents('.search').hide();
+
+    $('.results').show();
+    $('.search_again').show()
+    
     firstName = $('#first_name').val();
     lastName = $('#last_name').val();
     employer = $('#employer').val() || undefined;
@@ -65,6 +90,7 @@ $(document).ready(function(){
     city = $('#city').val() || undefined;
     state = $('#state').children('option:selected').val() || undefined;
     campaign = $('#campaign').find('option:selected').val() || undefined;
+    console.log(campaign);
     committeeID = $('#committee_id').val() || undefined;
     contributorID = $('#contributor_id').val() || undefined;
     maxAmount = $('#max_amount').val() || undefined;
@@ -77,16 +103,17 @@ $(document).ready(function(){
     }
     
     
-    console.log(firstName);
-    console.log(lastName);
-    console.log(employer);
-    console.log('city', city);
-    console.log(state);
-    console.log(fullName);
-    console.log('campaign', campaign);
+    // console.log(firstName);
+    // console.log(lastName);
+    // console.log(employer);
+    // console.log('city', city);
+    // console.log(state);
+    // console.log(fullName);
+    // console.log('campaign', campaign);
     // state = $('#first_name').val();
     // campaign = $('#first_name').val();
     
+    console.log('102', campaign);
     var request = {
       two_year_transaction_period: '2016',
       api_key: 'DEMO_KEY',
@@ -103,6 +130,8 @@ $(document).ready(function(){
       per_page: 100
     }
     
+    console.log(request);
+    
     $.ajax({
       url: 'https://api.open.fec.gov/v1/schedules/schedule_a',
       data: request,
@@ -113,33 +142,77 @@ $(document).ready(function(){
       }
     })
     .done(function(result){
+      
+      
       var arr = result.results
-      var tableClass = '.results_table_' + searchVal
-      var tableClassBody = tableClass + ' ' + 'tbody'
-      var tableClassBodyRow = tableClassBody + ' ' + 'tr'
-      var temp = $(tableClass).clone();
-      $('.results').children().remove();
-      $('.results').append(temp);
       
-      console.log(arr)
-      var lineTemp = $(tableClassBodyRow).clone()
-      $('tbody').children().remove();
+      if(!arr.length){
+        var noResult = $('.no_result').clone();
         
-      for(var i = 0; i < arr.length; i ++){
-        var data = lineTemp;
-        data.children('.result_name').text(arr[i]['contributor_first_name'] + ' ' + arr[i]['contributor_last_name']);
-        data.children('.result_city').text(arr[i]['contributor_city']);
-        data.children('.result_state').text(arr[i]['contributor_state']);
-        data.children('.result_employer').text(arr[i]['contributor_employer']);
-        data.children('.result_occupation').text(arr[i]['contributor_occupation'])
-        data.children('.result_campaign').text(arr[i]['committee']['name']);
-        data.children('.result_amount').text(arr[i]['contribution_receipt_amount']);
-        data.children('.result_date').text(arr[i]['contribution_receipt_date']);
-
-        $(tableClassBody).append(data);
-      }
+        $('.results').append(noResult);
+        
+      }else{
       
+        var tableClass = '.results_table_' + searchVal
+        var tableClassBody = tableClass + ' ' + 'tbody'
+        console.log(tableClassBody)
+        var tableClassBodyRow = tableClassBody + ' ' + 'tr'
+        var temp = $(tableClass).clone();
+        // $('.results').children().remove();
+        $('.results').append(temp);
+        
+        console.log(arr)
+        var lineTemp = $(tableClassBodyRow).clone()
+        $(tableClassBody).children().remove();
+          
+        for(var i = arr.length-1; i >=0; i --){
+          var data = lineTemp;
+          
+          var date = arr[i]['contribution_receipt_date']
+          var newDate = date.slice(0, 10)
+          
+          data.children('.result_name').text(arr[i]['contributor_first_name'] + ' ' + arr[i]['contributor_last_name']);
+          data.children('.result_city').text(arr[i]['contributor_city']);
+          data.children('.result_state').text(arr[i]['contributor_state']);
+          data.children('.result_employer').text(arr[i]['contributor_employer']);
+          data.children('.result_occupation').text(arr[i]['contributor_occupation'])
+          data.children('.result_campaign').text(arr[i]['committee']['name']);
+          data.children('.result_amount').text('$ ' + arr[i]['contribution_receipt_amount']);
+          data.children('.result_date').text(newDate);
+
+          // console.log('data', data)
+          $(tableClassBody).append(data);
+        }
+      }
     })
+    
+    
+  });
+
+  $('body').on('click', '.search_again', function() {
+    
+    firstName = undefined
+    lastName = undefined
+    employer = undefined
+    occupation = undefined
+    city = undefined
+    state = undefined
+    campaign = undefined
+    committeeID = undefined
+    contributorID = undefined
+    maxAmount = undefined
+    minAmount = undefined
+    maxDate = undefined
+    minDate = undefined
+    fullName = undefined
+    
+    
+    
+    $(this).hide();
+    $('.search_input').children().remove();
+    $('.results').children().remove()
+    $('.results').hide()
+    $('.search').show()
     
     
   })
