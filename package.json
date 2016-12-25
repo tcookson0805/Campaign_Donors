@@ -1,0 +1,23 @@
+{
+  "name": "campaign_donor_information",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tcookson0805/Campaign_Donors.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tcookson0805/Campaign_Donors/issues"
+  },
+  "homepage": "https://github.com/tcookson0805/Campaign_Donors#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

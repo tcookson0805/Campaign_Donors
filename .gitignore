@@ -1,2 +1,3 @@
 # Folder to Ignore
 info/
+node_modules/

@@ -4,6 +4,7 @@ $(document).ready(function(){
   
   $('select').material_select();
   
+  var FEC_API_KEY = process.env.FEC_API_KEY;
   
   var searchVal;
   var selection = $('.search_select');
@@ -38,28 +39,28 @@ $(document).ready(function(){
 
   })
   
-  $('body').on('change', '.search_select', function(){
+  // $('body').on('change', '.search_select', function(){
 
-    var val = selection.children('option:selected').val();
-    searchVal = selection.children('option:selected').val();
+  //   var val = selection.children('option:selected').val();
+  //   searchVal = selection.children('option:selected').val();
     
-    if(!toggle){
-      $('select').material_select('destroy');
-      toggle = true
+  //   if(!toggle){
+  //     $('select').material_select('destroy');
+  //     toggle = true
       
-      var tempName = '.search_input_' + val;
-      console.log(tempName);
-      var temp = $(tempName).clone();
+  //     var tempName = '.search_input_' + val;
+  //     console.log(tempName);
+  //     var temp = $(tempName).clone();
   
-      $('.search_input').children().remove();
-      $('.search_input').append(temp);
-      $('select').material_select();
-    }else{
+  //     $('.search_input').children().remove();
+  //     $('.search_input').append(temp);
+  //     $('select').material_select();
+  //   }else{
 
-      toggle = false
-    }    
+  //     toggle = false
+  //   }    
      
-  })
+  // })
   
 
   
@@ -105,7 +106,7 @@ $(document).ready(function(){
     
     var request = {
       two_year_transaction_period: '2016',
-      api_key: 'DEMO_KEY',
+      api_key: FEC_API_KEY,
       contributor_name: fullName,
       contributor_city: city,
       contributor_state: state,
@@ -191,6 +192,8 @@ $(document).ready(function(){
     minDate = undefined
     fullName = undefined
     
+    
+    
     $(this).hide();
     $('.search_input').children().remove();
     $('.results').children().remove()
@@ -198,6 +201,27 @@ $(document).ready(function(){
     $('.search').show()
     
     
-  });
+  })
   
-});
+
+  
+})
+
+
+
+
+
+
+
+
+
+// 'https://api.open.fec.gov/v1/schedules/schedule_a/?two_year_transaction_period=2016&api_key=WOkrttHIfjkVTaigmHawr8UQZ6Yl9uK8UGzybLH3&contributor_name=Michael%20Moroni&per_page=20#results/0'
+// 'https://api.open.fec.gov/v1/schedules/schedule_a/?two_year_transaction_period=2016&api_key=WOkrttHIfjkVTaigmHawr8UQZ6Yl9uK8UGzybLH3&contributor_name=Michael+Moroni&contributor_city=&per_page=20
+
+
+
+
+
+
+
+
