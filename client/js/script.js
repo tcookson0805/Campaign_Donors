@@ -4,8 +4,6 @@ $(document).ready(function(){
   
   $('select').material_select();
   
-  var FEC_API_KEY = process.env.FEC_API_KEY;
-  
   var searchVal;
   var selection = $('.search_select');
   var toggle = false;
@@ -106,7 +104,7 @@ $(document).ready(function(){
     
     var request = {
       two_year_transaction_period: '2016',
-      api_key: FEC_API_KEY,
+      api_key: 'Q5y4zhcvUdqviNQZQ7tBsXcighp2Zq9XYEoIoo3q',
       contributor_name: fullName,
       contributor_city: city,
       contributor_state: state,
