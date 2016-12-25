@@ -20,14 +20,6 @@
         </div>
       </header>
       
-<!--       <section class='row'>
-        <div class='col s6 offset-s3'>
-          <div class='info'>
-            Welcome to Donation Disclosure, a tool that allows you to explore how campaigns and committees fund their missions.
-          </div>
-        </div>
-      </section> -->
-      
       <section class='row'>
       <div class='col s8 offset-s2'>
       <div class='row card-panel search'>
@@ -42,8 +34,6 @@
                     <option value="name">Name</option>
                     <option value="city">City</option>
                     <option value="state">State</option>
-<!--                     <option value="employer">Employer</option>
- --><!--                     <option value="campaign">Presidential Campaign</option> -->
                   </select>
                 </div>
               </form>
@@ -74,6 +64,8 @@
 
     <div class='search_input_templates'>
       
+      <!-- NAME -->
+      
       <form class='col s12 search_input_name'>
         <div class='row'>
           <div class="input-field col s6">
@@ -92,6 +84,8 @@
         </div>
       </form>
               
+      <!-- CITY -->
+      
       <form class='col s12 search_input_city'>
         <div class='row'>
           <div class="input-field col s6">
@@ -161,8 +155,8 @@
         </div>
       </form>
       
+      <!-- STATE -->
       
-              
       <form class='col s12 search_input_state'>
         <div class='row'>
           <div class="input-field col s6 offset-s3">
@@ -227,50 +221,8 @@
           </div>
         </div>
       </form>
-
-      <form class='col s12 search_input_employer'>
-        <div class='row'>
-          <div class="input-field col s6 offset-s3">
-            <input id="employer" type="text" class="validate">
-            <label for="employer">Employer</label>
-          </div>
-        </div>
-        <div class='row'>
-          <div class='input-field col s12 center-align'>
-            <button class="btn waves-effect waves-light submit" type="submit" name="action">Submit</button>
-          </div>
-        </div>
-      </form>
       
-      <form class='col s12 search_input_campaign'>
-        <div class='row'>
-          <div class="input-field col s6 offset-s3">
-            <select id='campaign'>
-              <option value="" disabled selected>Presidential Campaign</option>
-              <optgroup label='Democrats'>
-                <option value="C00575795">Hillary Clinton</option>
-                <option value="C00577130">Bernie Sanders</option>
-              </optgroup>
-              <optgroup label='Republicans'>
-                <option value="C00580100">Donald Trump</option>
-                <option value="C00574624">Ted Cruz</option>
-                <option value="C00458844">Marco Rubio</option>
-                <option value="C00573519">Ben Carson</option>
-                <option value="C00579458">Jeb Bush</option>
-                <option value="C00580399">Chris Christie</option>
-                <option value="C00577312">Carly Fiorina</option>
-                <option value="C00575449">Rand Paul</option>
-              </optgroup>
-            </select>
-          </div>
-        </div>
-        <div class='row'>
-          <div class='input-field col s12 center-align'>
-            <button class="btn waves-effect waves-light submit" type="submit" name="action">Submit</button>
-          </div>
-        </div>
-      </form>
-      
+      <!-- ADVANCED  -->
       
       <form class='col s12 search_input_advanced'>
         <div class='row'>
@@ -397,17 +349,18 @@
     
     <!-- RESULTS TEMPLATES -->
     
-    
-    
     <div class='results_templates'>
 
+      <!-- NO RESULTS -->
+      
       <div class='col s12 no_result'>
         <div class='center-align'>
           <h3>No Results</h3>
         </div>
       </div>
 
-
+      <!-- NAME -->
+      
       <div class='col s12 results_table_name'>
         <table>
           <thead>
@@ -436,10 +389,10 @@
           </table>
         </div>
       </div>
-
-
       
-      <div class='col s12 results_table_city '>
+      <!-- CITY -->
+      
+      <div class='col s12 results_table_city'>
         <table>
           <thead>
             <tr>
@@ -455,7 +408,7 @@
         <div class='scrollable'>
           <table class='striped'>
             <tbody>
-              <tr>
+              <tr class='results_table_city_row'>
                 <td class='result_name'></td>
                 <td class='result_city'></td>
                 <td class='result_state'></td>
@@ -468,6 +421,8 @@
         </div>
       </div>
 
+      <!-- STATE -->
+      
       <div class='col s12 results_table_state '>
         <table>
           <thead>
@@ -497,133 +452,7 @@
         </div>
       </div>
 
-      <div class='col s12 results_table_employer '>
-        <table>
-          <thead>
-            <tr>
-                <th data-field="employer">Employer</th>
-                <th data-field="name">Name</th>
-                <th data-field="campaign">Campaign</th>
-                <th data-field="amount">Amount</th>
-            </tr>
-          </thead>
-        </table>
-        <div class='scrollable'>
-          <table class='striped'>
-            <tbody>
-              <tr>
-                <td class='result_employer'></td>
-                <td class='result_name'></td>
-                <td class='result_campaign'></td>
-                <td class='result_amount'></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-        
-      <div class='col s12 results_table_presidential '>
-        <table>
-          <thead>
-            <tr>
-                <th data-field="Campaign">Campaign</th>
-                <th data-field="name">Name</th>
-                <th data-field="city">City</th>
-                <th data-field="price">Amount</th>
-            </tr>
-          </thead>
-        </table>
-        <div class='scrollable'>
-          <table class='striped'>
-            <tbody>
-              <tr>
-                <td class='result_campaign'></td>
-                <td class='result_name'></td>
-                <td class='result_city'></td>
-                <td class='result_amount'></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-        
-
-      <div class='col s12 results_table_senate '>
-        <table>
-          <thead>
-            <tr>
-                <th data-field="Campaign">Campaign</th>
-                <th data-field="name">Name</th>
-                <th data-field="city">City</th>
-                <th data-field="price">Amount</th>
-            </tr>
-          </thead>
-        </table>
-        <div class='scrollable'>
-          <table class='striped'>
-            <tbody>
-              <tr>
-                <td>Roy Blunt</td>
-                <td>Ronnie Diebold</td>
-                <td>Oran, Mo</td>
-                <td>100.00</td>
-              </tr>
-              <tr>
-                <td>Roy Blunt</td>
-                <td>John GiGatti</td>
-                <td>Crap, Mo</td>
-                <td>10.00</td>
-              </tr>
-              <tr>
-                <td>Roy Blunt</td>
-                <td>Joe Bick</td>
-                <td>New York, NY</td>
-                <td>1000.00</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-        
-        
-      <div class='col s12 results_table_house '>
-        <table>
-          <thead>
-            <tr>
-                <th data-field="Campaign">Campaign</th>
-                <th data-field="name">Name</th>
-                <th data-field="city">City</th>
-                <th data-field="price">Amount</th>
-            </tr>
-          </thead>
-        </table>
-        <div class='scrollable'>
-          <table class='striped'>
-            <tbody>
-              <tr>
-                <td>Hillary Clinton</td>
-                <td>Ronnie Diebold</td>
-                <td>Oran, Mo</td>
-                <td>100.00</td>
-              </tr>
-              <tr>
-                <td>Donald Trump</td>
-                <td>John GiGatti</td>
-                <td>Crap, Mo</td>
-                <td>10.00</td>
-              </tr>
-              <tr>
-                <td>Bernie Sanders</td>
-                <td>Joe Bick</td>
-                <td>New York, NY</td>
-                <td>1000.00</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      
+      <!-- ADVANCED -->
       
       <div class='col s12 results_table_advanced '>
         <table>
@@ -657,43 +486,15 @@
           </table>
         </div>
         
-        
-        
-        
       </div>
       
-      
-      
-      
-      
-      
-      
     </div>
-    
-    
-    
     
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXU1uRTHT59QhWLNQy_zj0MOCz40lP-E4"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 
   </body>
+  
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

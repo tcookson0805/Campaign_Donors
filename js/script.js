@@ -38,28 +38,28 @@ $(document).ready(function(){
 
   })
   
-  // $('body').on('change', '.search_select', function(){
+  $('body').on('change', '.search_select', function(){
 
-  //   var val = selection.children('option:selected').val();
-  //   searchVal = selection.children('option:selected').val();
+    var val = selection.children('option:selected').val();
+    searchVal = selection.children('option:selected').val();
     
-  //   if(!toggle){
-  //     $('select').material_select('destroy');
-  //     toggle = true
+    if(!toggle){
+      $('select').material_select('destroy');
+      toggle = true
       
-  //     var tempName = '.search_input_' + val;
-  //     console.log(tempName);
-  //     var temp = $(tempName).clone();
+      var tempName = '.search_input_' + val;
+      console.log(tempName);
+      var temp = $(tempName).clone();
   
-  //     $('.search_input').children().remove();
-  //     $('.search_input').append(temp);
-  //     $('select').material_select();
-  //   }else{
+      $('.search_input').children().remove();
+      $('.search_input').append(temp);
+      $('select').material_select();
+    }else{
 
-  //     toggle = false
-  //   }    
+      toggle = false
+    }    
      
-  // })
+  })
   
 
   
@@ -103,17 +103,6 @@ $(document).ready(function(){
     }
     
     
-    // console.log(firstName);
-    // console.log(lastName);
-    // console.log(employer);
-    // console.log('city', city);
-    // console.log(state);
-    // console.log(fullName);
-    // console.log('campaign', campaign);
-    // state = $('#first_name').val();
-    // campaign = $('#first_name').val();
-    
-    console.log('102', campaign);
     var request = {
       two_year_transaction_period: '2016',
       api_key: 'DEMO_KEY',
@@ -130,7 +119,6 @@ $(document).ready(function(){
       per_page: 100
     }
     
-    console.log(request);
     
     $.ajax({
       url: 'https://api.open.fec.gov/v1/schedules/schedule_a',
@@ -158,13 +146,11 @@ $(document).ready(function(){
         console.log(tableClassBody)
         var tableClassBodyRow = tableClassBody + ' ' + 'tr'
         var temp = $(tableClass).clone();
-        // $('.results').children().remove();
+      
         $('.results').append(temp);
-        
-        console.log(arr)
-        var lineTemp = $(tableClassBodyRow).clone()
-        $(tableClassBody).children().remove();
-          
+        var lineTemp = $('.results tbody > tr').clone()
+        $('.results tbody').children().remove();
+        console.log(lineTemp)
         for(var i = arr.length-1; i >=0; i --){
           var data = lineTemp;
           
@@ -180,7 +166,6 @@ $(document).ready(function(){
           data.children('.result_amount').text('$ ' + arr[i]['contribution_receipt_amount']);
           data.children('.result_date').text(newDate);
 
-          // console.log('data', data)
           $(tableClassBody).append(data);
         }
       }
@@ -206,8 +191,6 @@ $(document).ready(function(){
     minDate = undefined
     fullName = undefined
     
-    
-    
     $(this).hide();
     $('.search_input').children().remove();
     $('.results').children().remove()
@@ -215,27 +198,6 @@ $(document).ready(function(){
     $('.search').show()
     
     
-  })
+  });
   
-
-  
-})
-
-
-
-
-
-
-
-
-
-// 'https://api.open.fec.gov/v1/schedules/schedule_a/?two_year_transaction_period=2016&api_key=WOkrttHIfjkVTaigmHawr8UQZ6Yl9uK8UGzybLH3&contributor_name=Michael%20Moroni&per_page=20#results/0'
-// 'https://api.open.fec.gov/v1/schedules/schedule_a/?two_year_transaction_period=2016&api_key=WOkrttHIfjkVTaigmHawr8UQZ6Yl9uK8UGzybLH3&contributor_name=Michael+Moroni&contributor_city=&per_page=20
-
-
-
-
-
-
-
-
+});
