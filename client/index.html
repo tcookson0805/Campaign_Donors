@@ -32,7 +32,7 @@
         </div>
       </header>
 
-      <section class="row">
+      <section class="row search">
         <div class="col s8 offset-s2">
           <form class="search_form">
             <div class="row">
@@ -63,41 +63,41 @@
                 <button class="btn waves-effect waves-light submit" type="submit" name="action">Continue</button>
               </div>
             </div>
-          </form>
-
-          <div class="row">
-            <div class="col s12">
-              <div class='search_advanced'>Advanced Search</div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col s12">
-              <div class="disclaimer">
-                Powered by the FEC Campaign Finance Disclosure API
+            <div class="row">
+              <div class="col s12">
+                <div class='search_advanced'>Advanced Search</div>
               </div>
             </div>
-          </div>
+          </form>
 
         </div>
 
       </section>
+
+<!--       <section class="row disclaimer">
+        <div class="col s12">
+          <div>
+            Powered by the FEC Campaign Finance Disclosure API
+          </div>
+        </div>
+      </section> -->
       
       <section class='row results_box'> 
         <div class="col s8 offset-s2 results_box">
-          <div class="card-panel results">
+          <div class="card results">
 
           </div>  
         </div>
-
       </section>
       
-      <section class='row search_again'>
-        <div class='col s12 center-align'>
-          <a class="waves-effect waves-light btn">New Search</a>
+      <section class="row disclaimer">
+        <div class="col s12">
+          <div>
+            Powered by the FEC Campaign Finance Disclosure API
+          </div>
         </div>
       </section>
-      
+
       
 
 
@@ -393,41 +393,52 @@
       <!-- NO RESULTS -->
       
       <div class='no_result'>
-        <div class='center-align'>
+        <div class='card-content center-align'>
           <h3>No Results</h3>
+        </div>
+        <div class="card-action">
+          <div class='search_again center-align'>
+              <a class="waves-effect waves-light btn">New Search</a>
+          </div>
         </div>
       </div>
 
       <!-- All Categories -->
 
       <div class='results_table'>
-        <table>
-          <thead>
-            <tr>
-              <th data-field="name">Name</th>
-              <th data-field="city">City</th>
-              <th data-field="state">State</th>
-              <th data-field="campaign">Campaign</th>
-              <th data-field="amount">Amount</th>
-              <th data-field="date">Date</th> 
-            </tr>
-          </thead>
-        </table>
-        <div class='scrollable'>
-          <table class='striped'>
-            <tbody>
-              <tr class='results_row'>
-                <td class='result_name'></td>
-                <td class='result_city'></td>
-                <td class='result_state'></td>
-                <td class='result_campaign'></td>
-                <td class='result_amount'></td>
-                <td class='result_date'></td>
+        <div class="card-content">
+          <table>
+            <thead>
+              <tr>
+                <th data-field="name">Name</th>
+                <th data-field="city">City</th>
+                <th data-field="state">State</th>
+                <th data-field="campaign">Campaign</th>
+                <th data-field="amount">Amount</th>
+                <th data-field="date">Date</th> 
               </tr>
-            </tbody>
+            </thead>
           </table>
+          <div class='scrollable'>
+            <table class='striped'>
+              <tbody>
+                <tr class='results_row'>
+                  <td class='result_name'></td>
+                  <td class='result_city'></td>
+                  <td class='result_state'></td>
+                  <td class='result_campaign'></td>
+                  <td class='result_amount'></td>
+                  <td class='result_date'></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        
+        <div class="card-action">
+          <div class='search_again center-align'>
+            <a class="waves-effect waves-light btn">New Search</a>
+          </div>
+        </div>
       </div>
 
 

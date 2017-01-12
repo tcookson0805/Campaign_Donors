@@ -29,7 +29,7 @@ body {
   height: 100%;
   z-index: -1000;
   position: absolute;
-  opacity: 0.15;
+  opacity: 0.08;
 }
 
 .background2 {
@@ -449,7 +449,6 @@ button:focus {
 }
 
 .search_again .btn {
-  background-color: #C0B283;
   cursor: pointer;
 }
 

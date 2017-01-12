@@ -75,10 +75,11 @@ $(document).ready(function(){
   $('body').on('click', '.search_advanced', function(){
     
     $('select').material_select('destroy');
+    $('.search_input').children().remove();
+
     searchVal = 'advanced';
     var clone = $('.search_input_advanced').clone();
     
-    $('.search_input').children().remove();
     $('.search_input').append(clone);
     $('select').material_select();
     
@@ -87,7 +88,8 @@ $(document).ready(function(){
 
   $('body').on('click', '.submit', function(e){
     e.preventDefault();
-
+    console.log('clicked!!')
+    $('.search').hide();
     $('.results').show()
     $('.results').children().remove();
 
@@ -132,7 +134,7 @@ $(document).ready(function(){
       dataType: 'json',
       type: 'GET',
       beforeSend: function(jqXHR, settings){
-        console.log(settings.url)
+        console.log(settings)
       }
     })
     .done(function(result) {
@@ -143,8 +145,10 @@ $(document).ready(function(){
 
         var noResult = $('.no_result').clone();
         $('.results').append(noResult);
+        $('.search_again').show();
 
       } else {
+        $('.search_again').show();
 
         var table = $('.results_table').clone();
         $('.results').append(table);
@@ -293,12 +297,23 @@ $(document).ready(function(){
     
     
     $(this).hide();
-    $('.search_input').children().remove();
     $('.results').children().remove()
     $('.results').hide()
     $('.search').show()
     
-    
+
+    $('label').removeClass('active')
+    $('#first_name').val('');
+    $('#last_name').val('');    
+    $('#min_date').val('');  
+    $('#max_date').val('');  
+    $('#min_amount').val('');  
+    $('#max_amount').val('');  
+    $('#employer').val('');  
+    $('#occupation').val('');  
+    $('#committee_id').val('');  
+    $('#contributor_id').val('');  
+  
   })
   
 
