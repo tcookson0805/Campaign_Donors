@@ -2,16 +2,26 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  overflow: auto;
+}
+
 body {
-/*  background: radial-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url('../images/money.jpg');
+  background-image: linear-gradient(to bottom, #fbfde5, #f8f5ed);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;*/
-  font-family: 'Ubuntu', sans-serif;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+/*  z-index: -1000;
+  position: absolute;*/
+
 }
 
 .background {
-  background: radial-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url('../images/money.jpg');
+  background: radial-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ),url('../images/flag.gif');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -19,16 +29,35 @@ body {
   height: 100%;
   z-index: -1000;
   position: absolute;
-  -webkit-filter: blur(4px);
-  -moz-filter: blur(4px);
-  -o-filter: blur(4px);
-  -ms-filter: blur(4px);
-  filter: blur(4px);
+  opacity: 0.15;
 }
+
+.background2 {
+  background-image: linear-gradient(to bottom, #fbfde5, #f8f5ed);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+/*  z-index: -1000;
+  position: absolute;*/
+  opacity: 0.8;
+}
+
+
 
 .hero {
   z-index: 1000;
+  height: 100%;
 }
+
+
+.main {
+  margin-left: 2em;
+  border: 0.1em solid red;
+}
+
 
 
 /*//////   HEADER   //////*/
@@ -41,21 +70,30 @@ header {
 }
 
 .headline {
-  padding: 1em 0 0 1em;
+  font-family: HelveticaNeue-Bold;
   font-size: 3em;
+  text-align: center;
+  color: #3d4452;
+  margin-top: 0.5em;
+  line-height: 1.2em;
 }
 
+.headline-text {
+  font-family: HelveticaNeue-Light;
+  font-size: 2em;
+  text-align: center;
+  color: #3d4452;
+  margin-top: 0.5em;
+}
 
 /*//////  INFO //////*/
 
-.info {
-  
-}
 
-.info_text {
-  
-}
 
+.filter_button {
+  margin: 1em 1em 1em auto;
+  background: radial-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) );
+}
 
 
 /*///////  HERO  //////*/
@@ -84,20 +122,43 @@ section {
   font-size: 1.5em;
 }
 
+.search_options {
+  text-align: center;
+}
+
+.search_options_header {
+  margin: 0.5em;
+}
+
+.search_options a {
+  margin: 0.5em;
+}
+
 
 /* label color */
+
+.input-field {
+
+}
+
 .input-field label {
-  color: #000;
-  font-size: 1.5em;
+  font-family: HelveticaNeue-Light;
+  color: #9b9b9b;
+  font-size: 2em;
+  top: 0em;
 }
 /* label focus color */
 .input-field input[type=text]:focus + label {
-  color: #000;
+  color: #3d4452;
 }
+
 /* label underline focus color */
 .input-field input[type=text]:focus {
   border-bottom: 1px solid #000;
   box-shadow: 0 1px 0 0 #000;
+  font-size: 2em;
+  font-family: HelveticaNeue;
+
 }
 /* valid color */
 .input-field input[type=text].valid {
@@ -111,7 +172,7 @@ section {
 }
 /* icon prefix focus color */
 .input-field .prefix.active {
-  color: #000;
+  color: #3d4452;
 }
 
 .search_form {
@@ -123,51 +184,89 @@ ul.dropdown-content.select-dropdown li span {
   font-size: 0.75em;
 }
 
+
+.search_input {
+  background-color: none;
+}
+
+
 .search_input ul.dropdown-content.select-dropdown li span {
   font-size: 1em; 
 }
 
 
 .input_field {
-  text-align: center;
+  text-align: left;
 }
 
 .select-wrapper input.select-dropdown {
-  font-size: 1em;
-  text-align: center;
+  font-size: 2em;
+  text-align: left;
+  color: #3d4452;
+  font-family: HelveticaNeue-Light;
 }
 
 .search_input .select-wrapper input.select-dropdown {
   font-size: 1.5em;
-  text-align: center;
+  text-align: left;
 }
 
 .search_advanced {
   text-align: center;
-  color: #C0B283;
+  font-family: HelveticaNeue-Light;
+  color: #4a90e2;
   cursor: pointer;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 
 .btn {
-  background-color: #373737;
+  background-color: #4990e2;
 }
 
 .btn:hover {
-  background-color: black;
+  background-color: #195daa;
 }
 
+button:focus {
+  background-color: #195daa;
+}
+
+.submit {
+  width: 25em;
+}
+
+.disclaimer {
+  font-family: HelveticaNeue;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: italic;
+  font-stretch: normal;
+  text-align: center;
+  color: #3d4452;
+}
 
 /*///////   RESULTS   //////*/
+
+.results_box {
+  overflow: auto;
+}
 
 .results {
   display: none;
 }
 
+.results thead > tr th {
+  font-family: HelveticaNeue-Bold
+}
+
+.results tbody > tr td {
+  font-family: HelveticaNeue;
+}
+
 
 .scrollable {
-  max-height: 35em;
+  max-height: 30em;
   overflow: scroll;
 }
 
