@@ -7,7 +7,7 @@ $(document).ready(function(){
   var searchVal;
   var selection = $('.search_select');
   var toggle = false;
-  var searchVal;
+  var searchVal = 'name';
   var firstName;
   var lastName;
   var fullName;
@@ -23,6 +23,16 @@ $(document).ready(function(){
   var maxDate;
   var minDate;
   
+
+  // $('body').on('click', '.btn', function() {
+  //   $('.search_input').children().remove();
+  //   var val = $(this).text();
+  //   var tempName = '.search_input_' + val;
+  //   var temp = $(tempName).clone();
+  //   console.log(tempName)
+  //   $('.search_input').append(temp);
+  // })
+
 
   $('body').on('change', '.search_select', function() {
     
@@ -73,15 +83,14 @@ $(document).ready(function(){
     $('select').material_select();
     
   });
-  
+
+
   $('body').on('click', '.submit', function(e){
     e.preventDefault();
-    
-    $(this).parents('.search').hide();
 
-    $('.results').show();
-    $('.search_again').show()
-    
+    $('.results').show()
+    $('.results').children().remove();
+
     firstName = $('#first_name').val();
     lastName = $('#last_name').val();
     employer = $('#employer').val() || undefined;
@@ -96,12 +105,11 @@ $(document).ready(function(){
     minAmount = $('#min_amount').val() || undefined;
     maxDate = $('#max_date').val() || undefined;
     minDate = $('#min_date').val() || undefined;
-    
-    if(firstName && lastName){
+
+    if(firstName && lastName) {
       fullName = firstName + ' ' + lastName || undefined;
     }
-    
-    
+
     var request = {
       two_year_transaction_period: '2016',
       api_key: 'Q5y4zhcvUdqviNQZQ7tBsXcighp2Zq9XYEoIoo3q',
@@ -117,8 +125,7 @@ $(document).ready(function(){
       contributor_id: contributorID,
       per_page: 100
     }
-    
-    
+
     $.ajax({
       url: 'https://api.open.fec.gov/v1/schedules/schedule_a',
       data: request,
@@ -128,50 +135,143 @@ $(document).ready(function(){
         console.log(settings.url)
       }
     })
-    .done(function(result){
+    .done(function(result) {
       
+      var data = result.results;
       
-      var arr = result.results
-      
-      if(!arr.length){
-        var noResult = $('.no_result').clone();
-        
-        $('.results').append(noResult);
-        
-      }else{
-      
-        var tableClass = '.results_table_' + searchVal
-        var tableClassBody = tableClass + ' ' + 'tbody'
-        console.log(tableClassBody)
-        var tableClassBodyRow = tableClassBody + ' ' + 'tr'
-        var temp = $(tableClass).clone();
-      
-        $('.results').append(temp);
-        var lineTemp = $('.results tbody > tr').clone()
-        $('.results tbody').children().remove();
-        console.log(lineTemp)
-        for(var i = arr.length-1; i >=0; i --){
-          var data = lineTemp;
-          
-          var date = arr[i]['contribution_receipt_date']
-          var newDate = date.slice(0, 10)
-          
-          data.children('.result_name').text(arr[i]['contributor_first_name'] + ' ' + arr[i]['contributor_last_name']);
-          data.children('.result_city').text(arr[i]['contributor_city']);
-          data.children('.result_state').text(arr[i]['contributor_state']);
-          data.children('.result_employer').text(arr[i]['contributor_employer']);
-          data.children('.result_occupation').text(arr[i]['contributor_occupation'])
-          data.children('.result_campaign').text(arr[i]['committee']['name']);
-          data.children('.result_amount').text('$ ' + arr[i]['contribution_receipt_amount']);
-          data.children('.result_date').text(newDate);
+      if(!data.length) {
 
-          $(tableClassBody).append(data);
+        var noResult = $('.no_result').clone();
+        $('.results').append(noResult);
+
+      } else {
+
+        var table = $('.results_table').clone();
+        $('.results').append(table);
+        var tableRow = $('.results .results_table tbody > tr').clone();
+        $('.results .results_table tbody').children().remove();
+              
+        for(var i = 0; i < data.length; i++) {
+          
+          var row = tableRow.clone();
+          var date = data[i]['contribution_receipt_date']
+          var newDate = date.slice(0, 10)
+          row.children('.result_name').text(data[i]['contributor_first_name'] + ' ' + data[i]['contributor_last_name']);
+          row.children('.result_city').text(data[i]['contributor_city']);
+          row.children('.result_state').text(data[i]['contributor_state']);
+          row.children('.result_employer').text(data[i]['contributor_employer']);
+          row.children('.result_occupation').text(data[i]['contributor_occupation'])
+          row.children('.result_campaign').text(data[i]['committee']['name']);
+          row.children('.result_amount').text('$ ' + data[i]['contribution_receipt_amount']);
+          row.children('.result_date').text(newDate);
+          $('.results .results_table tbody').append(row)
+        
         }
       }
     })
+
+  })
+
+
+  
+  // $('body').on('click', '.subm', function(e){
+  //   e.preventDefault();
+  //   console.log('hey')
+  //   $(this).parents('.search').hide();
+
+  //   $('.results').show();
+  //   $('.search_again').show()
+    
+  //   firstName = $('#first_name').val();
+  //   lastName = $('#last_name').val();
+  //   employer = $('#employer').val() || undefined;
+  //   occupation = $('#occupation').val() || undefined;
+  //   city = $('#city').val() || undefined;
+  //   state = $('#state').children('option:selected').val() || undefined;
+  //   campaign = $('#campaign').find('option:selected').val() || undefined;
+  //   console.log(campaign);
+  //   committeeID = $('#committee_id').val() || undefined;
+  //   contributorID = $('#contributor_id').val() || undefined;
+  //   maxAmount = $('#max_amount').val() || undefined;
+  //   minAmount = $('#min_amount').val() || undefined;
+  //   maxDate = $('#max_date').val() || undefined;
+  //   minDate = $('#min_date').val() || undefined;
+    
+  //   if(firstName && lastName){
+  //     fullName = firstName + ' ' + lastName || undefined;
+  //   }
     
     
-  });
+  //   var request = {
+  //     two_year_transaction_period: '2016',
+  //     api_key: 'Q5y4zhcvUdqviNQZQ7tBsXcighp2Zq9XYEoIoo3q',
+  //     contributor_name: fullName,
+  //     contributor_city: city,
+  //     contributor_state: state,
+  //     committee_id: campaign,
+  //     min_amount: minAmount,
+  //     max_amount: maxAmount,
+  //     min_date: minDate,
+  //     max_date: maxDate,
+  //     committee_id: committeeID,
+  //     contributor_id: contributorID,
+  //     per_page: 100
+  //   }
+    
+    
+  //   $.ajax({
+  //     url: 'https://api.open.fec.gov/v1/schedules/schedule_a',
+  //     data: request,
+  //     dataType: 'json',
+  //     type: 'GET',
+  //     beforeSend: function(jqXHR, settings){
+  //       console.log(settings.url)
+  //     }
+  //   })
+  //   .done(function(result){
+      
+  //     console.log('result', result)
+  //     var arr = result.results
+      
+  //     if(!arr.length){
+  //       var noResult = $('.no_result').clone();
+        
+  //       $('.results').append(noResult);
+        
+  //     }else{
+      
+  //       var tableClass = '.results_table_' + searchVal
+  //       var tableClassBody = tableClass + ' ' + 'tbody'
+  //       console.log(tableClassBody)
+  //       var tableClassBodyRow = tableClassBody + ' ' + 'tr'
+  //       var temp = $(tableClass).clone();
+      
+  //       $('.results').append(temp);
+  //       var lineTemp = $('.results tbody > tr').clone()
+  //       $('.results tbody').children().remove();
+  //       console.log(lineTemp)
+  //       for(var i = arr.length-1; i >=0; i --){
+  //         var data = lineTemp;
+          
+  //         var date = arr[i]['contribution_receipt_date']
+  //         var newDate = date.slice(0, 10)
+          
+  //         data.children('.result_name').text(arr[i]['contributor_first_name'] + ' ' + arr[i]['contributor_last_name']);
+  //         data.children('.result_city').text(arr[i]['contributor_city']);
+  //         data.children('.result_state').text(arr[i]['contributor_state']);
+  //         data.children('.result_employer').text(arr[i]['contributor_employer']);
+  //         data.children('.result_occupation').text(arr[i]['contributor_occupation'])
+  //         data.children('.result_campaign').text(arr[i]['committee']['name']);
+  //         data.children('.result_amount').text('$ ' + arr[i]['contribution_receipt_amount']);
+  //         data.children('.result_date').text(newDate);
+
+  //         $(tableClassBody).append(data);
+  //       }
+  //     }
+  //   })
+    
+    
+  // });
 
   $('body').on('click', '.search_again', function() {
     
