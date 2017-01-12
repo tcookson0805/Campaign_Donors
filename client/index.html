@@ -14,47 +14,81 @@
   <body>
   
     <div class='background'></div>
-    
-    <header>
-      <div class='headline'>
-        <img src="images/contributions_logo.png" alt="contribution$">
-      </div>
-    </header>
-
+<!--     <div class="background2"></div>
+ -->
     
     <div class='hero'>
-      
-      <section class='row'>
-        <div class='col s10 offset-s1'>
-          <div class='row card-panel search'>
-            <div> 
-              <div class='col s12'>
-                <div class='search_text'>
-                  Use this tool to tap into records provided by
-                  the Federal Election Commission to find out who donated
-                  to Campaigns and Committees.
-                </div>
-                <div class='search_box'>
-                  <form class='search_form'>
-                    <div class="input-field col s4 offset-s4">
-                      <select class='search_select'>
-                        <option value="" disabled selected>Choose your option</option>
-                        <option value="name">Name</option>
-                        <option value="city">City</option>
-                        <option value="state">State</option>
-                      </select>
-                    </div>
-                  </form>
-                </div>
-                <div class='row search_input'></div>
-                <div class='search_advanced'>Advanced Search</div>
-              </div>
+    
+      <header>
+        <div class="row">
+          <div class="col s8 offset-s2">
+            <div class='headline'>
+              Discover who supports candidates and causes in your area.
+            </div>
+            <div class="headline-text">
+              Type a friend's name or select a city to get started
             </div>
           </div>
         </div>
+      </header>
+
+      <section class="row">
+        <div class="col s8 offset-s2">
+          <form class="search_form">
+            <div class="row">
+              <div class="col s3">
+                <div class="input-field">
+                  <select class='search_select'>
+                    <option value="name">Name</option>
+                    <option value="city">City</option>
+                    <option value="state">State</option>
+                  </select>
+                </div>
+              </div>
+              <div class="search_input col s9">
+                <div class='row'>
+                  <div class="input-field col s6">
+                    <input id="first_name" type="text" class="validate">
+                    <label for="first_name">First Name</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="last_name" type="text" class="validate">
+                    <label for="last_name">Last Name</label>
+                  </div>
+                </div>
+              </div> 
+            </div>
+            <div class='row'>
+              <div class='input-field col s12 center-align'>
+                <button class="btn waves-effect waves-light submit" type="submit" name="action">Continue</button>
+              </div>
+            </div>
+          </form>
+
+          <div class="row">
+            <div class="col s12">
+              <div class='search_advanced'>Advanced Search</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12">
+              <div class="disclaimer">
+                Powered by the FEC Campaign Finance Disclosure API
+              </div>
+            </div>
+          </div>
+
+        </div>
+
       </section>
       
-      <section class='row card-panel results'>
+      <section class='row results_box'> 
+        <div class="col s8 offset-s2 results_box">
+          <div class="card-panel results">
+
+          </div>  
+        </div>
 
       </section>
       
@@ -65,6 +99,9 @@
       </section>
       
       
+
+
+
     </div>
     
     <!-- Templates -->
@@ -82,11 +119,6 @@
           <div class="input-field col s6">
             <input id="last_name" type="text" class="validate">
             <label for="last_name">Last Name</label>
-          </div>
-        </div>
-        <div class='row'>
-          <div class='input-field col s12 center-align'>
-            <button class="btn waves-effect waves-light submit" type="submit" name="action">Submit</button>
           </div>
         </div>
       </form>
@@ -155,11 +187,11 @@
             </select>
           </div>
         </div>
-        <div class='row'>
+<!--         <div class='row'>
           <div class='input-field col s12 center-align'>
-            <button class="btn waves-effect waves-light submit" type="submit" name="action">Submit</button>
+            <button class="btn waves-effect waves-light submit" type="submit" name="action">Continue</button>
           </div>
-        </div>
+        </div> -->
       </form>
       
       <!-- STATE -->
@@ -222,11 +254,11 @@
             </select>
           </div>
         </div>
-        <div class='row'>
+<!--         <div class='row'>
           <div class='input-field col s12 center-align'>
-            <button class="btn waves-effect waves-light submit" type="submit" name="action">Submit</button>
+            <button class="btn waves-effect waves-light submit" type="submit" name="action">Continue</button>
           </div>
-        </div>
+        </div> -->
       </form>
       
       <!-- ADVANCED  -->
@@ -343,11 +375,11 @@
             <label for="contributor_id">Contributor ID</label>
           </div>
         </div>
-        <div class='row'>
+<!--         <div class='row'>
           <div class='input-field col s12 center-align'>
             <button class="btn waves-effect waves-light submit" type="submit" name="action">Submit</button>
           </div>
-        </div>
+        </div> -->
       </form>
     
     </div>
@@ -360,11 +392,46 @@
 
       <!-- NO RESULTS -->
       
-      <div class='col s12 no_result'>
+      <div class='no_result'>
         <div class='center-align'>
           <h3>No Results</h3>
         </div>
       </div>
+
+      <!-- All Categories -->
+
+      <div class='results_table'>
+        <table>
+          <thead>
+            <tr>
+              <th data-field="name">Name</th>
+              <th data-field="city">City</th>
+              <th data-field="state">State</th>
+              <th data-field="campaign">Campaign</th>
+              <th data-field="amount">Amount</th>
+              <th data-field="date">Date</th> 
+            </tr>
+          </thead>
+        </table>
+        <div class='scrollable'>
+          <table class='striped'>
+            <tbody>
+              <tr class='results_row'>
+                <td class='result_name'></td>
+                <td class='result_city'></td>
+                <td class='result_state'></td>
+                <td class='result_campaign'></td>
+                <td class='result_amount'></td>
+                <td class='result_date'></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+      </div>
+
+
+
 
       <!-- NAME -->
       
