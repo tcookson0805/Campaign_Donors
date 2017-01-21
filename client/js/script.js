@@ -23,6 +23,20 @@ $(document).ready(function(){
   var maxDate;
   var minDate;
   
+  var monthsObj = {
+    '01': 'January',
+    '02': 'February',
+    '03': 'March',
+    '04': 'April',
+    '05': 'May',
+    '06': 'June',
+    '07': 'July',
+    '08': 'August',
+    '09': 'September',
+    '10': 'October',
+    '11': 'November',
+    '12': 'December'
+  }
 
   // $('body').on('click', '.btn', function() {
   //   $('.search_input').children().remove();
@@ -99,8 +113,6 @@ $(document).ready(function(){
     occupation = $('#occupation').val() || undefined;
     city = $('#city').val() || undefined;
     state = $('#state').children('option:selected').val() || undefined;
-    campaign = $('#campaign').find('option:selected').val() || undefined;
-    console.log(campaign);
     committeeID = $('#committee_id').val() || undefined;
     contributorID = $('#contributor_id').val() || undefined;
     maxAmount = $('#max_amount').val() || undefined;
@@ -118,7 +130,8 @@ $(document).ready(function(){
       contributor_name: fullName,
       contributor_city: city,
       contributor_state: state,
-      committee_id: campaign,
+      contributor_employer: employer,
+      contributor_occupation: occupation,
       min_amount: minAmount,
       max_amount: maxAmount,
       min_date: minDate,
@@ -127,6 +140,8 @@ $(document).ready(function(){
       contributor_id: contributorID,
       per_page: 100
     }
+    
+    console.log('request', request)
 
     $.ajax({
       url: 'https://api.open.fec.gov/v1/schedules/schedule_a',
@@ -158,11 +173,23 @@ $(document).ready(function(){
         for(var i = 0; i < data.length; i++) {
           
           var row = tableRow.clone();
-          var date = data[i]['contribution_receipt_date']
-          var newDate = date.slice(0, 10)
-          row.children('.result_name').text(data[i]['contributor_first_name'] + ' ' + data[i]['contributor_last_name']);
-          row.children('.result_city').text(data[i]['contributor_city']);
-          row.children('.result_state').text(data[i]['contributor_state']);
+
+          console.log(data[i]['contributor_employer'])
+
+          var date = data[i]['contribution_receipt_date'].slice(0,10);
+          var day = date.slice(8,10);
+          var month = date.slice(5,7);
+          var year = date.slice(0,4);
+          var newDate = monthsObj[month] + ' ' + day + ', ' + year;
+
+          var name = '<div class="result_name">' + data[i]['contributor_first_name'] + ' ' + data[i]['contributor_last_name'] + '</div>';
+          var city = '<div class="result_city">' + data[i]['contributor_city'] + ', ' + data[i]['contributor_state'] + '</div>';
+
+          row.children('.result_contributor').append(name);
+          row.children('.result_contributor').append(city);
+
+          // row.children('.result_name').text(data[i]['contributor_first_name'] + ' ' + data[i]['contributor_last_name']);
+          // row.children('.result_city').text(city);
           row.children('.result_employer').text(data[i]['contributor_employer']);
           row.children('.result_occupation').text(data[i]['contributor_occupation'])
           row.children('.result_campaign').text(data[i]['committee']['name']);
