@@ -264,6 +264,14 @@ button:focus {
   font-family: HelveticaNeue;
 }
 
+.result_name {
+  font-weight: bold;
+}
+
+.result_city {
+  font-style: italic;
+}
+
 
 .scrollable {
   max-height: 30em;
