@@ -34,6 +34,8 @@ body {
   height: 100%;
 }
 
+
+
 .main {
   margin-left: 2em;
   border: 0.1em solid red;
@@ -63,7 +65,6 @@ header {
   color: #3d4452;
   margin-top: 0.5em;
 }
-
 
 
 /*//////  INFO //////*/
@@ -179,7 +180,7 @@ ul.dropdown-content.select-dropdown li span {
 }
 
 .search_input .select-wrapper input.select-dropdown {
-  font-size: 1.5em;
+  font-size: 2em;
   text-align: left;
 }
 
@@ -395,3 +396,85 @@ thead tr th {
   font-weight: 600;
   font-size: 1.5em;
 }
+
+
+/*//////   MEDIA QUERIES   //////*/
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  
+  .headline {
+    font-size: 2em;
+  }
+
+  .headline-text {
+    font-size: 1.5em;
+  }
+
+  .select-wrapper input.select-dropdown, .search_input  .select-wrapper input.select-dropdown {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .input-field label {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr { 
+    display: block; 
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  td { 
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee; 
+    position: relative;
+    padding-left: 50%; 
+  }
+  
+  td:before { 
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 23%;
+    left: 6px;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+
+  td:nth-of-type(1):before { content: "Name"; }
+  td:nth-of-type(2):before { content: "Committee"; }
+  td:nth-of-type(3):before { content: "Amount"; }
+  td:nth-of-type(4):before { content: "Date"; }
+
+  
+  /*  https://css-tricks.com/responsive-data-tables/ */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
