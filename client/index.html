@@ -14,8 +14,6 @@
   <body>
   
     <div class='background'></div>
-<!--     <div class="background2"></div>
- -->
     
     <div class='hero'>
     
@@ -41,22 +39,25 @@
                   <select class='search_select'>
                     <option value="name">Name</option>
                     <option value="city">City</option>
-                    <option value="state">State</option>
                   </select>
                 </div>
               </div>
-              <div class="search_input col s9">
-                <div class='row'>
-                  <div class="input-field col s6">
-                    <input id="first_name" type="text" class="validate">
-                    <label for="first_name">First Name</label>
-                  </div>
-                  <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Last Name</label>
-                  </div>
-                </div>
-              </div> 
+              <div class="col s9">
+                <div class="search_input row">
+                  <form class='col s12 search_input_name'>
+                    <div class='row'>
+                      <div class="input-field col s6">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                      </div>
+                      <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                      </div>
+                    </div>
+                  </form>
+                </div> 
+              </div>
             </div>
             <div class='row'>
               <div class='input-field col s12 center-align'>
@@ -74,13 +75,6 @@
 
       </section>
 
-<!--       <section class="row disclaimer">
-        <div class="col s12">
-          <div>
-            Powered by the FEC Campaign Finance Disclosure API
-          </div>
-        </div>
-      </section> -->
       
       <section class='row results_box'> 
         <div class="col s8 offset-s2 results_box">
@@ -98,17 +92,15 @@
         </div>
       </section>
 
-      
-
-
-
     </div>
     
-    <!-- Templates -->
+
+
+    <!-- TEMPLATES -->
 
     <div class='search_input_templates'>
       
-      <!-- NAME -->
+      <!-- NAME SEARCH-->
       
       <form class='col s12 search_input_name'>
         <div class='row'>
@@ -123,7 +115,7 @@
         </div>
       </form>
               
-      <!-- CITY -->
+      <!-- CITY SEARCH-->
       
       <form class='col s12 search_input_city'>
         <div class='row'>
@@ -187,81 +179,10 @@
             </select>
           </div>
         </div>
-<!--         <div class='row'>
-          <div class='input-field col s12 center-align'>
-            <button class="btn waves-effect waves-light submit" type="submit" name="action">Continue</button>
-          </div>
-        </div> -->
       </form>
       
-      <!-- STATE -->
-      
-      <form class='col s12 search_input_state'>
-        <div class='row'>
-          <div class="input-field col s6 offset-s3">
-            <select id="state">
-              <option value="" disabled selected>Select State</option>
-              <option value="AL">Alabama</option>
-              <option value="AK">Alaska</option>
-              <option value="AZ">Arizona</option>
-              <option value="AR">Arkansas</option>
-              <option value="CA">California</option>
-              <option value="CO">Colorado</option>
-              <option value="CT">Connecticut</option>
-              <option value="DE">Delaware</option>
-              <option value="FL">Florida</option>
-              <option value="GA">Georgia</option>
-              <option value="HI">Hawaii</option>
-              <option value="ID">Idaho</option>
-              <option value="IL">Illinois</option>
-              <option value="IN">Indiana</option>
-              <option value="IA">Iowa</option>
-              <option value="KS">Kansas</option>
-              <option value="KY">Kentucky</option>
-              <option value="LA">Louisiana</option>
-              <option value="ME">Maine</option>
-              <option value="MD">Maryland</option>
-              <option value="MA">Massachusetts</option>
-              <option value="MI">Michigan</option>
-              <option value="MN">Minnesota</option>
-              <option value="MS">Mississippi</option>
-              <option value="MO">Missouri</option>
-              <option value="MT">Montana</option>
-              <option value="NE">Nebraska</option>
-              <option value="NV">Nevada</option>
-              <option value="NH">New Hampshire</option>
-              <option value="NJ">New Jersey</option>
-              <option value="NM">New Mexico</option>
-              <option value="NY">New York</option>
-              <option value="NC">North Carolina</option>
-              <option value="ND">North Dakota</option>
-              <option value="OH">Ohio</option>
-              <option value="OK">Oklahoma</option>
-              <option value="OR">Oregon</option>
-              <option value="PA">Pennsylvania</option>
-              <option value="RI">Rhode Island</option>
-              <option value="SC">South Carolina</option>
-              <option value="SD">South Dakota</option>
-              <option value="TN">Tennessee</option>
-              <option value="TX">Texas</option>
-              <option value="UT">Utah</option>
-              <option value="VT">Vermont</option>
-              <option value="VA">Virginia</option>
-              <option value="WA">Washington</option>
-              <option value="WV">West Virginia</option>
-              <option value="WI">Wisconsin</option>
-              <option value="WY">Wyoming</option>                   
-            </select>
-          </div>
-        </div>
-<!--         <div class='row'>
-          <div class='input-field col s12 center-align'>
-            <button class="btn waves-effect waves-light submit" type="submit" name="action">Continue</button>
-          </div>
-        </div> -->
-      </form>
-      
-      <!-- ADVANCED  -->
+
+      <!-- ADVANCED SEARCH -->
       
       <form class='col s12 search_input_advanced'>
         <div class='row'>
@@ -375,11 +296,6 @@
             <label for="contributor_id">Contributor ID</label>
           </div>
         </div>
-<!--         <div class='row'>
-          <div class='input-field col s12 center-align'>
-            <button class="btn waves-effect waves-light submit" type="submit" name="action">Submit</button>
-          </div>
-        </div> -->
       </form>
     
     </div>
@@ -403,7 +319,7 @@
         </div>
       </div>
 
-      <!-- All Categories -->
+      <!-- ALL CATEGORIES RESULTS -->
 
       <div class='results_table'>
         <div class="card-content">
@@ -437,135 +353,6 @@
         </div>
       </div>
 
-
-
-
-      <!-- NAME -->
-      
-      <div class='col s12 results_table_name'>
-        <table>
-          <thead>
-            <tr>
-                <th data-field="name">Name</th>
-                <th data-field="city">City</th>
-                <th data-field="campaign">Campaign</th>
-                <th data-field="amount">Amount</th>
-                <th data-field="date">Date</th>
-            </tr>
-          </thead>
-        </table>
-        <div class='scrollable'>
-          <table class='striped'>
-            <tbody>
-              <tr>
-                <td class='result_name'></td>
-                <td><span class='result_city'></span> <span class='result_state'></span></td>
-                <td class='result_campaign'></td>
-                <td class='result_amount'></td>
-                <td class='result_date'></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      
-      <!-- CITY -->
-      
-      <div class='col s12 results_table_city'>
-        <table>
-          <thead>
-            <tr>
-                <th data-field="name">Name</th>
-                <th data-field="city">City</th>
-                <th data-field="state">State</th>
-                <th data-field="campaign">Campaign</th>
-                <th data-field="amount">Amount</th>
-                <th data-field="date">Date</th>
-            </tr>
-          </thead>
-        </table>
-        <div class='scrollable'>
-          <table class='striped'>
-            <tbody>
-              <tr class='results_table_city_row'>
-                <td class='result_name'></td>
-                <td class='result_city'></td>
-                <td class='result_state'></td>
-                <td class='result_campaign'></td>
-                <td class='result_amount'></td>
-                <td class='result_date'></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- STATE -->
-      
-      <div class='col s12 results_table_state '>
-        <table>
-          <thead>
-            <tr>
-                <th data-field="name">Name</th>
-                <th data-field="city">City</th>
-                <th data-field="state">State</th>
-                <th data-field="campaign">Campaign</th>
-                <th data-field="amount">Amount</th>
-                <th data-field="date">Date</th>
-            </tr>
-          </thead>
-        </table>
-        <div class='scrollable'>
-          <table class='striped'>
-            <tbody>
-              <tr>
-                <td class='result_name'></td>
-                <td class='result_city'></td>
-                <td class='result_state'></td>
-                <td class='result_campaign'></td>
-                <td class='result_amount'></td>
-                <td class='result_date'></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- ADVANCED -->
-      
-      <div class='col s12 results_table_advanced '>
-        <table>
-          <thead>
-            <tr>
-              <th data-field="name">Name</th>
-              <th data-field="city">City</th>
-              <th data-filed="state">State</th>
-              <th data-field="employer">Employer</th>
-              <th data-field="occupation">Occupation</th>
-              <th data-field="campaign">Campaign</th>
-              <th data-field="amount">Amount</th>
-              <th data-filed="date">Date</th> 
-            </tr>
-          </thead>
-        </table>
-        <div class='scrollable'>
-          <table class='striped'>
-            <tbody>
-              <tr>
-                <td class='result_name'></td>
-                <td class='result_city'></td>
-                <td class='result_state'></td>
-                <td class='result_employer'></td>
-                <td class='result_occupation'></td>
-                <td class='result_campaign'></td>
-                <td class='result_amount'></td>
-                <td class='result_date'></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        
-      </div>
       
     </div>
     

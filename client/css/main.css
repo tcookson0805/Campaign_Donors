@@ -15,9 +15,6 @@ body {
   background-attachment: fixed;
   width: 100%;
   height: 100%;
-/*  z-index: -1000;
-  position: absolute;*/
-
 }
 
 .background {
@@ -32,26 +29,10 @@ body {
   opacity: 0.08;
 }
 
-.background2 {
-  background-image: linear-gradient(to bottom, #fbfde5, #f8f5ed);
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  width: 100%;
-  height: 100%;
-/*  z-index: -1000;
-  position: absolute;*/
-  opacity: 0.8;
-}
-
-
-
 .hero {
   z-index: 1000;
   height: 100%;
 }
-
 
 .main {
   margin-left: 2em;
@@ -63,10 +44,7 @@ body {
 /*//////   HEADER   //////*/
 
 header {
-/*  background-color: #373737;*/
-/*  color: #C0B283;
-  height: 5em;
-  font-size: 1.75em;*/
+
 }
 
 .headline {
@@ -86,9 +64,9 @@ header {
   margin-top: 0.5em;
 }
 
+
+
 /*//////  INFO //////*/
-
-
 
 .filter_button {
   margin: 1em 1em 1em auto;
@@ -96,8 +74,8 @@ header {
 }
 
 
-/*///////  HERO  //////*/
 
+/*///////  HERO  //////*/
 
 section {
   background: none;
@@ -133,9 +111,6 @@ section {
 .search_options a {
   margin: 0.5em;
 }
-
-
-/* label color */
 
 .input-field {
 
@@ -184,16 +159,13 @@ ul.dropdown-content.select-dropdown li span {
   font-size: 0.75em;
 }
 
-
 .search_input {
   background-color: none;
 }
 
-
 .search_input ul.dropdown-content.select-dropdown li span {
   font-size: 1em; 
 }
-
 
 .input_field {
   text-align: left;
@@ -218,7 +190,6 @@ ul.dropdown-content.select-dropdown li span {
   cursor: pointer;
   font-size: 1em;
 }
-
 
 .btn {
   background-color: #4990e2;
@@ -246,6 +217,8 @@ button:focus {
   color: #3d4452;
 }
 
+
+
 /*///////   RESULTS   //////*/
 
 .results_box {
@@ -272,7 +245,6 @@ button:focus {
   font-style: italic;
 }
 
-
 .scrollable {
   max-height: 30em;
   overflow: scroll;
@@ -282,6 +254,9 @@ button:focus {
   font-style: italic;
 }
 
+
+
+
 /*///////   SEARCH AGAIN   //////*/
 
 .search_again {
@@ -290,9 +265,9 @@ button:focus {
 }
 
 
+
+
 /*////// SEARCH //////*/
-
-
 
 .donor {
   
@@ -320,55 +295,15 @@ button:focus {
   
 }
 
-
 .all_donors_submit {
   text-align: center;
   padding: 2em;
   clear: both;
 }
 
-
 .donor {
   
 }
-
-#presidential_data {
-  
-}
-
-#presidential_data_city {
-  
-}
-
-#presidential_data_state {
-  
-}
-
-#campaign_id {
-  border: 1px red solid; 
-}
-
-.presidential_submit {
-  
-}
-
-
-.presidential_submit {
-  text-align: center;
-  text-align: center;
-  padding: 2em;
-  clear: both;
-}
-
-
-.presidential_donor_info {
-  background-color: #9E9EA4;
-  margin: 0.5em auto;
-}
-
-
-
-
 
 
 
@@ -379,17 +314,11 @@ button:focus {
   
 }
 
-.presidential_results {
-  
-}
-
-
 .results_headline {
   text-align: center;
   font-size: 1.5em;
   font-weight: bold;
 }
-
 
 .all_donor_info_template {
   display: none;
@@ -426,7 +355,6 @@ button:focus {
   font-weight: bold;
 }
 
-
 .contributor_name {
   padding-left: 1.5em;
   font-weight: normal;
@@ -447,7 +375,6 @@ button:focus {
   font-weight: normal;
 }
 
-
 .search_input_templates {
   display: none;
 }
@@ -459,9 +386,6 @@ button:focus {
 .search_again .btn {
   cursor: pointer;
 }
-
-
-
 
 table {
   table-layout: fixed;
