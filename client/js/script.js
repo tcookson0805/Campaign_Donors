@@ -44,8 +44,6 @@ $(document).ready(function(){
 
   $('body').on('change', '.search_select', function() {
     
-    console.log('search_select changed')
-
     $('select').material_select('destroy');
     $('.search_input').children().remove();
     var val = selection.children('option:selected').val();
@@ -62,8 +60,6 @@ $(document).ready(function(){
 
   $('body').on('click', '.search_advanced', function() {
     
-    console.log('search_advanced clicked')
-
     $('select').material_select('destroy');
     $('.search_input').children().remove();
 
@@ -80,8 +76,6 @@ $(document).ready(function(){
   // handles submission of form (city, state, or advanced )
 
   $('body').on('click', '.submit', function(e){
-
-    console.log('.submit clicked')
 
     e.preventDefault();
     $('.search').hide();
@@ -122,7 +116,6 @@ $(document).ready(function(){
       per_page: 100
     }
     
-    console.log('request', request)
 
     $.ajax({
       url: 'https://api.open.fec.gov/v1/schedules/schedule_a',
@@ -133,10 +126,9 @@ $(document).ready(function(){
         console.log(settings)
       }
     })
+
     .done(function(result) {
       
-      console.log('result', result);
-
       var data = result.results;
 
       if(!data.length) {
@@ -192,8 +184,6 @@ $(document).ready(function(){
 
   $('body').on('click', '.search_again', function() {
     
-    console.log('search_again clicked')
-
     firstName = undefined
     lastName = undefined
     employer = undefined
