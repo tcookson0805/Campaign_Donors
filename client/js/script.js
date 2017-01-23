@@ -162,6 +162,9 @@ $(document).ready(function(){
 
           row.children('.result_contributor').append(name);
           row.children('.result_contributor').append(city);
+
+          // row.children('.result_name').text(data[i]['contributor_first_name'] + ' ' + data[i]['contributor_last_name']);
+          // row.children('.result_city').text(city);
           row.children('.result_employer').text(data[i]['contributor_employer']);
           row.children('.result_occupation').text(data[i]['contributor_occupation'])
           row.children('.result_campaign').text(data[i]['committee']['name']);
