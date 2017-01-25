@@ -27,3 +27,4 @@ Future enhancements:
     * search by candidate name
     * search by congressional district
 
+* include map feature
