@@ -18,24 +18,12 @@ The front-end utilizes jQuery and is styled with the Materialize CSS framework. 
 
 # Development Roadmap
 
-Future enhancements
+Future enhancements:
 
-* continue to make UI enhancements
+* continue improving UI
 
-* add search feature
-	* search for new artists
-	* search for concerts
-		* by location
-		* by time frame
-
-* allow artist list manipulation
-	* add artists
-	* remove artists
-
-* improve map feature
-	* implement cluster/heat mapping feature
-
-* allow users to share concert information
-    * with other users directly
-    * on social media feeds
+* provide more search features
+    * search by committee name
+    * search by candidate name
+    * search by congressional district
 
