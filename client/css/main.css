@@ -5,6 +5,7 @@
 html, body {
   height: 100%;
   overflow: auto;
+  font-family: HelveticaNeue, Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -50,7 +51,7 @@ header {
 }
 
 .headline {
-  font-family: HelveticaNeue-Bold;
+  font-weight: bold;
   font-size: 3rem;
   text-align: center;
   color: #3d4452;
@@ -59,7 +60,6 @@ header {
 }
 
 .headline-text {
-  font-family: HelveticaNeue-Light;
   font-size: 2em;
   text-align: center;
   color: #3d4452;
@@ -118,7 +118,6 @@ section {
 }
 
 .input-field label {
-  font-family: HelveticaNeue-Light;
   color: #9b9b9b;
   font-size: 2em;
   top: 0em;
@@ -176,7 +175,6 @@ ul.dropdown-content.select-dropdown li span {
   font-size: 2em;
   text-align: left;
   color: #3d4452;
-  font-family: HelveticaNeue-Light;
 }
 
 .search_input .select-wrapper input.select-dropdown {
@@ -186,7 +184,6 @@ ul.dropdown-content.select-dropdown li span {
 
 .search_advanced {
   text-align: center;
-  font-family: HelveticaNeue-Light;
   color: #4a90e2;
   cursor: pointer;
   font-size: 1em;
@@ -209,7 +206,6 @@ button:focus {
 }
 
 .disclaimer {
-  font-family: HelveticaNeue;
   font-size: 16px;
   font-weight: 300;
   font-style: italic;
@@ -231,11 +227,10 @@ button:focus {
 }
 
 .results thead > tr th {
-  font-family: HelveticaNeue-Bold
+  font-weight: bold;
 }
 
 .results tbody > tr td {
-  font-family: HelveticaNeue;
 }
 
 .result_name {
