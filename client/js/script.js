@@ -4,6 +4,8 @@ $(document).ready(function(){
   
   $('select').material_select();
   
+  var loading = $('.loading').clone();
+
   var searchVal;
   var selection = $('.search_select');
   var toggle = false;
@@ -81,6 +83,8 @@ $(document).ready(function(){
     $('.search').hide();
     $('.results').show()
     $('.results').children().remove();
+    $('.results').append(loading);
+
 
     firstName = $('#first_name').val();
     lastName = $('#last_name').val();
@@ -129,6 +133,8 @@ $(document).ready(function(){
 
     .done(function(result) {
       
+      $('.results').children().remove();
+
       var data = result.results;
 
       if(!data.length) {
