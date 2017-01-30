@@ -10,6 +10,13 @@ Campaign Donors provides its users an interface to tap into data maintained by t
 
 The front-end utilizes jQuery and is styled with the Materialize CSS framework. The backe-end is built on NodeJS using a simple ExpressJS web server. Search queries result in data retrieved and reformatted from the Federal Election Commission's OpenFEC API, which is still in beta.
 
+
+# UX
+
+Initial view to user is search form for the name of a donor. User has option to change this form to search by state. User also has option to select 'Advanced Search' located under Continue button.
+
+![alt text](project_info/screenshots/campaigndonors_main.png "Landing page")
+
 # Development Roadmap
 
 Future enhancements:
