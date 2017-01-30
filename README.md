@@ -17,6 +17,10 @@ Initial view to user is search form for the name of a donor. User has option to 
 
 ![alt text](project_info/screenshots/campaigndonors_main.png "Landing page")
 
+After selecting the search option, entering search values, and clicking continue button, the results will be displayed to the user. At the bottom of the results is a button that will allow the user to perform a new search.
+
+![alt text](project_info/screenshots/campaigndonors_search_result.png "Result page")
+
 # Development Roadmap
 
 Future enhancements:
