@@ -41,7 +41,6 @@ $(document).ready(function(){
   }
 
 
-
   // changes the searchable form ( city or state )
 
   $('body').on('change', '.search_select', function() {
@@ -63,8 +62,8 @@ $(document).ready(function(){
   $('body').on('click', '.search_advanced', function() {
     
     $('select').material_select('destroy');
-    $('.search_input').children().remove();
-
+    // $('.search_input').children().remove();
+    
     searchVal = 'advanced';
     var clone = $('.search_input_advanced').clone();
     
@@ -222,6 +221,8 @@ $(document).ready(function(){
     $('#committee_id').val('');  
     $('#contributor_id').val('');  
   
+    $('#city').val('');
+
   }) 
   
 
