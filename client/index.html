@@ -32,32 +32,36 @@
 
       <section class="row search">
         <div class="col s12 m8 offset-m2">
-          <form class="search_form">
+          <div class="search_form">
             <div class="row">
-              <div class="col s10 m3 offset-s1">
-                <div class="input-field">
-                  <select class='search_select'>
-                    <option value="name">Name</option>
-                    <option value="city">City</option>
-                  </select>
+            
+              <div class="main_search">
+                <div class="col s10 m3 offset-s1">
+                  <div class="input-field">
+                    <select class='search_select'>
+                      <option value="name">Name</option>
+                      <option value="city">City</option>
+                    </select>
+                  </div>
                 </div>
-              </div>
-              <div class="col s12 m9">
-                <div class="search_input row">
-                  <form class='col s12 search_input_name'>
-                    <div class='row'>
-                      <div class="input-field col s10 offset-s1 m6">
-                        <input id="first_name" type="text" class="validate">
-                        <label for="first_name">First Name</label>
-                      </div>
-                      <div class="input-field col s10 offset-s1 m6">
-                        <input id="last_name" type="text" class="validate">
-                        <label for="last_name">Last Name</label>
+                <div class="col s12 m9">
+                  <div class="search_input row">
+                    <div class='col s12 search_input_name'>
+                      <div class='row'>
+                        <div class="input-field col s10 offset-s1 m6">
+                          <input id="first_name" type="text" class="validate">
+                          <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s10 offset-s1 m6">
+                          <input id="last_name" type="text" class="validate">
+                          <label for="last_name">Last Name</label>
+                        </div>
                       </div>
                     </div>
-                  </form>
-                </div> 
+                  </div> 
+                </div>
               </div>
+
             </div>
             <div class='row'>
               <div class='input-field col s12 center-align'>
@@ -69,7 +73,7 @@
                 <div class='search_advanced'>Advanced Search</div>
               </div>
             </div>
-          </form>
+          </div>
 
         </div>
 
@@ -123,7 +127,7 @@
               
       <!-- CITY SEARCH-->
       
-      <form class='col s12 search_input_city'>
+      <div class='col s12 search_input_city'>
         <div class='row'>
           <div class="input-field col m6 s12">
             <input id="city" type="text" class="validate">
@@ -185,12 +189,12 @@
             </select>
           </div>
         </div>
-      </form>
+      </div>
       
 
       <!-- ADVANCED SEARCH -->
       
-      <form class='col s12 search_input_advanced'>
+      <div class='col s12 search_input_advanced'>
         <div class='row'>
 
           <div class="input-field col m6 s12">
@@ -304,11 +308,42 @@
             <label for="contributor_id">Contributor ID</label>
           </div>
         </div>
-      </form>
+      </div>
     
+      <!-- NEW SEARCH -->
+      
+      <div class="new_search">
+
+        <div class="col s10 m3 offset-s1">
+          <div class="input-field">
+            <select class='search_select'>
+              <option value="name">Name</option>
+              <option value="city">City</option>
+            </select>
+          </div>
+        </div>
+        <div class="col s12 m9">
+          <div class="search_input row">
+            <div class='col s12 search_input_name'>
+              <div class='row'>
+                <div class="input-field col s10 offset-s1 m6">
+                  <input id="first_name" type="text" class="validate">
+                  <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s10 offset-s1 m6">
+                  <input id="last_name" type="text" class="validate">
+                  <label for="last_name">Last Name</label>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div>
+
+      </div>
+      
     </div>
     
-    
+
     
     <!-- RESULTS TEMPLATES -->
     

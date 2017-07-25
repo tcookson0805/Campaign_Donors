@@ -40,6 +40,7 @@ $(document).ready(function(){
     '12': 'December'
   }
 
+  var normalSearch = $('.normal_search').clone();
 
   // changes the searchable form ( city or state )
 
@@ -62,14 +63,13 @@ $(document).ready(function(){
   $('body').on('click', '.search_advanced', function() {
     
     $('select').material_select('destroy');
-    // $('.search_input').children().remove();
-    
+    $('.main_search').hide();
+
     searchVal = 'advanced';
-    var clone = $('.search_input_advanced').clone();
+    var advanced = $('.search_input_advanced').clone();
     
-    $('.search_input').append(clone);
+    $('.search_form').children().first().prepend(advanced);
     $('select').material_select();
-    
   });
 
 
@@ -184,11 +184,15 @@ $(document).ready(function(){
   })
 
 
-
   // resets search by removing results and form
 
   $('body').on('click', '.search_again', function() {
     
+    console.log('hey')
+
+    $('.search_form').find('.search_input_advanced').remove();
+    $('.main_search').show();
+
     firstName = undefined
     lastName = undefined
     employer = undefined
@@ -220,7 +224,6 @@ $(document).ready(function(){
     $('#occupation').val('');  
     $('#committee_id').val('');  
     $('#contributor_id').val('');  
-  
     $('#city').val('');
 
   }) 
