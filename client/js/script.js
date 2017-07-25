@@ -73,7 +73,6 @@ $(document).ready(function(){
   });
 
 
-
   // handles submission of form (city, state, or advanced )
 
   $('body').on('click', '.submit', function(e){
@@ -83,7 +82,6 @@ $(document).ready(function(){
     $('.results').show()
     $('.results').children().remove();
     $('.results').append(loading);
-
 
     firstName = $('#first_name').val();
     lastName = $('#last_name').val();
@@ -119,14 +117,13 @@ $(document).ready(function(){
       per_page: 100
     }
     
-
     $.ajax({
       url: 'https://api.open.fec.gov/v1/schedules/schedule_a',
       data: request,
       dataType: 'json',
       type: 'GET',
       beforeSend: function(jqXHR, settings){
-        console.log(settings)
+        // console.log(settings)
       }
     })
 
@@ -154,7 +151,7 @@ $(document).ready(function(){
           
           var row = tableRow.clone();
 
-          console.log(data[i]['contributor_employer'])
+          // console.log(data[i]['contributor_employer'])
 
           var date = data[i]['contribution_receipt_date'].slice(0,10);
           var day = date.slice(8,10);
@@ -188,7 +185,7 @@ $(document).ready(function(){
 
   $('body').on('click', '.search_again', function() {
     
-    console.log('hey')
+    // console.log('hey')
 
     $('.search_form').find('.search_input_advanced').remove();
     $('.main_search').show();
@@ -228,7 +225,6 @@ $(document).ready(function(){
 
   }) 
   
-
   
 })
 
